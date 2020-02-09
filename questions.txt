@@ -1,0 +1,89 @@
+﻿6.  What’s stdint.h?
+        stdint.h is a header file in the C standard library that allows 
+        programmers to write more portable code by providing a set of typedefs 
+        that specify exact-width integer types, along with the defined min and 
+        max values for each type, using macros.
+6. Що таке стаття.h?
+        stdint.h - файл заголовка в стандартній бібліотеці С, який дозволяє
+        програмісти пишуть більше портативного коду, надаючи набір typedefs
+        які задають цілі типи точної ширини разом із визначеними min та
+        максимальні значення для кожного типу, використовуючи макроси.
+7.  What’s the point of using uint8_t, uint32_t, int32_t, and uint16_t in a 
+    program?
+        These are unsigned and signed integer types from stdint.h. Using well-
+        defined types makes the code far easier and safer to port since you 
+        won't get any surprises when one machine interprets int as 16-bit and 
+        another as 32-bit. What you type is what you get when you use them.
+7. Який сенс використовувати uint8_t, uint32_t, int32_t та uint16_t в
+    програма?
+        Це непідписані та підписані цілі типи від stdint.h. Використовуючи добре-
+        визначені типи робить код набагато простішим та безпечнішим для порту після вас
+        не отримає сюрпризів, коли одна машина інтерпретує int як 16-бітну та
+        інший як 32-розрядний. Те, що ви вводите, те, що ви отримуєте, коли використовуєте їх.
+8.  How many bytes is a BYTE, a DWORD, a LONG, and a WORD, respectively?
+        1 byte in a BYTE
+        4 bytes in a DWORD (32 bits)
+        4 bytes in a LONG (32 bits)
+        2 bytes in a WORD (16 bits)
+8. Скільки байтів - відповідно BYTE, DWORD, LONG та WORD?
+        1 байт у БЮТЕ
+        4 байти в DWORD (32 біта)
+        4 байти в LONG (32 біта)
+        2 байти у слові (16 біт)
+9.  What (in ASCII, decimal, or hexadecimal) must the first two bytes of any BMP
+    file be? (Leading bytes used to identify file formats (with high probability)
+    are generally called "magic numbers.)"
+        The first two bytes of any BMP file must contain ASCII B then ASCII M.
+9. Яким (у ASCII, десятковим або шістнадцятковим) повинні бути перші два байти будь-якого BMP
+    файл бути? (Провідні байти, які використовуються для ідентифікації форматів файлів (з високою ймовірністю)
+    взагалі називають "магічними числами.)"
+        Перші два байти будь-якого файлу BMP повинні містити ASCII B, а потім ASCII M.
+10. What’s the difference between bfSize and biSize?
+        bfSize is the size of the bmp file. biSize is the size of the structure. 
+        Both in bytes.
+10. У чому різниця між bfSize та biSize?
+        bfSize - розмір файлу bmp. biSize - це розмір структури.
+        Обидва в байтах.
+11. What does it mean if biHeight is negative?
+        If biHeight is postive, the image is bottom up. If biHeight is negative,
+        the image is bottom down. 
+11. Що означає, якщо biHeight негативний?
+        Якщо biHeight є позитивним, зображення знизу вгору. Якщо biHeight негативний,
+        зображення знизу вниз.
+12. What field in BITMAPINFOHEADER specifies the BMP’s color depth (i.e., bits 
+    per pixel)?
+        biBitCount specifies the BMP's color depth - the number of bits per 
+        pixel.
+12. Яке поле в BITMAPINFOHEADER вказує глибину кольору BMP (тобто, біт
+    на піксель)?
+        biBitCount визначає глибину кольору BMP - кількість біт на один
+        пікселів.
+13. Why might fopen return NULL in copy.c:37?
+        fopen might return a NULL pointer if the file that fopen is trying to 
+        write to doesn't exist.
+13. Чому може фопенд повернути NULL у copy.c: 37?
+        fopen може повернути вказівник NULL, якщо файл, який fopen намагається
+        писати в не існує
+14. Why is the third argument to fread always 1 in our code?
+        fread's third argument is always 1 because we are iterating over every 
+        pixel.
+14. Чому в нашому коді третій аргумент для завантаження завжди 1?
+        Третій аргумент fread завжди 1, тому що ми повторюємо кожен
+        пікселів.
+15. What value does copy.c:70 assign padding if bi.biWidth is 3?
+        If biWidth is 3:
+        int padding =  (4 - (bi.biWidth * sizeof(RGBTRIPLE)) % 4) % 4 = 3.
+        This step ensures the number of bytes in every row is a multiple of 4.
+15. Яке значення copy.c: 70 призначить прокладці, якщо bi.biWidth становить 3?
+        Якщо biWidth становить 3:
+        int padding = (4 - (bi.biWidth * sizeof (RGBTRIPLE))% 4)% 4 = 3.
+        Цей крок забезпечує кількість байтів у кожному рядку кратним 4.	
+16. What does fseek do?
+        fseek allows us to change the offset of a pointer.
+16. Що робить фсек?
+        fseek дозволяє нам змінити зміщення покажчика.
+17. What is SEEK_CUR?
+        SEEK_CUR is the current position indicator in the file.
+17. Що таке SEEK_CUR?
+        SEEK_CUR - індикатор поточної позиції у файлі.
+
