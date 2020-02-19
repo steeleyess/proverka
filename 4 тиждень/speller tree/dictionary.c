@@ -78,17 +78,17 @@ bool load(const char *dictionary)
             hashznach = hash(NOVII[i]);
             if (root1->children[hashznach]==NULL)
             {
-                node *root2 = malloc(sizeof(node));
-                if(root2==NULL)
+                root1->children[hashznach] = malloc(sizeof(node));
+                if(root1->children[hashznach]==NULL)
                 {
+                    unload();
                     return false;
                 }
                 for (int j = 0; j < N; j++)
                 {
-                    root2->children[i] = NULL;
+                    root1->children[hashznach]->children[j] = NULL;
                 }
-                root2->is_word = false;
-                root1->children[hashznach] = root2;
+                root1->children[hashznach]->is_word = false;
                 root1 = root1->children[hashznach];
                 if(i==n-1)
                 {
